@@ -3,17 +3,18 @@ package com.riwi.simulacro.domain.entities;
 import java.time.LocalDate;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.Lob;
-import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "submissions")
+@Entity(name = "submissions")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -28,4 +29,17 @@ public class Submission {
     private LocalDate submissionDate;
     private Double grade;
     
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+        name = "users_id",
+        referencedColumnName = "id"
+        )
+    private Users users;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(
+        name = "assignments_id",
+        referencedColumnName = "id"
+        )
+    private Assignment assignments;
 }
