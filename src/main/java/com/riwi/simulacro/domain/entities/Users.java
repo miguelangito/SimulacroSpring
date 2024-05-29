@@ -58,7 +58,7 @@ public class Users {
         cascade = CascadeType.ALL,
         orphanRemoval = false
         )
-    private List<Courses> courses;
+    private List<Course> courses;
 
     @OneToMany(
         mappedBy = "users",

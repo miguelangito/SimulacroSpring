@@ -48,5 +48,5 @@ public class Message {
         name = "course_id",
         referencedColumnName = "id"
     )
-    private Courses courses;
+    private Course courses;
 }

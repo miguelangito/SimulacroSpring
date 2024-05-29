@@ -38,5 +38,5 @@ public class Enrollment {
         name = "courses_id",
         referencedColumnName = "id"
     )
-    private Courses courses;
+    private Course courses;
 }

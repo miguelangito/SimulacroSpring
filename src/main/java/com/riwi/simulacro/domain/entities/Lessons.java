@@ -50,5 +50,5 @@ public class Lessons {
         name = "course_id",
         referencedColumnName = "id"
     )
-    private Courses courses;
+    private Course courses;
 }
